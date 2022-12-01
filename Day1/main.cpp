@@ -30,7 +30,7 @@ int main (int argc, char** argv)
     }
 
     string x;
-    int CaloryTotal;
+    int CaloryTotal = 0;
 
     while (getline(InputTextFile, x))
     {
