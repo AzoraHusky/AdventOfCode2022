@@ -41,7 +41,16 @@ int main (int argc, char** argv)
         }
         else
         {
-            CaloryTotal += stoi(x);
+            try
+            {
+                CaloryTotal += stoi(x);
+            }
+            catch(const std::invalid_argument& e)
+            {
+                std::cerr << "Threw invalid argument while parsing int" << endl;
+                InputTextFile.close();
+                return 1;
+            }           
         }
     }
     InputTextFile.close();
