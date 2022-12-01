@@ -8,7 +8,6 @@ using namespace std;
 
 int main (int argc, char** argv)
 {
-    string ElfList;
     vector<int> CaloryList;
     ifstream InputTextFile;
     int HighestTopThree = 0;
