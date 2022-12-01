@@ -2,6 +2,7 @@
 #include <fstream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
@@ -10,7 +11,7 @@ int main (int argc, char** argv)
     string ElfList;
     vector<int> CaloryList;
     ifstream InputTextFile;
-    int HighestCalory = 0;
+    int HighestTopThree = 0;
 
     if (argc > 2)
     {
@@ -44,15 +45,14 @@ int main (int argc, char** argv)
             CaloryTotal += stoi(x);
         }
     }
-    
     InputTextFile.close();
 
-    for (int i : CaloryList)
-    {
-        if (HighestCalory < i) HighestCalory = i;
-    }
+    sort (CaloryList.begin(), CaloryList.end(), greater<int>());
 
-    cout << "The highest Calories held by an Elf is " << HighestCalory << endl;
+    HighestTopThree = CaloryList[0] + CaloryList[1] + CaloryList[2];
+
+    cout << "The highest Calories held by an Elf is " << CaloryList[0] << endl;
+    cout << "The total of the top three Elves is " << HighestTopThree << endl;
     
     return 0;
 }
