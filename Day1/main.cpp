@@ -52,7 +52,7 @@ int main (int argc, char** argv)
         if (HighestCalory < i) HighestCalory = i;
     }
 
-    cout << "The highest Calory held by an Elf is " << HighestCalory << endl;
+    cout << "The highest Calories held by an Elf is " << HighestCalory << endl;
     
     return 0;
 }
