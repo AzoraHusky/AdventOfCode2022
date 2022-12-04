@@ -21,32 +21,22 @@ char GetSimilarItemsInRutsack(string &Rutsack)
     string FirstRutsack = Rutsack.substr(0, CompartmentLength);
     string SecondRutsack = Rutsack.substr(CompartmentLength, CompartmentLength);
 
-    char SimilarItem = '\0';
     for (char FirstItem : FirstRutsack)
     {
         for (char SecondItem : SecondRutsack)
         {
             if (FirstItem == SecondItem)
             {
-                SimilarItem = FirstItem;
+                return FirstItem;
             }
         }
     }
 
-    if (SimilarItem == '\0')
-    {
-        return '\0';
-    }
-    else
-    {
-        return SimilarItem;
-    }
+    return '\0';
 }
 
 char GetSimilarItemsInGroup(vector<string> &RutsackList)
 {
-    char SimilarItem = '\0';
-
     string FirstRutsack = RutsackList[0];
     string SecondRutsack = RutsackList[1];
     string ThirdRutsack = RutsackList[2];
@@ -59,20 +49,13 @@ char GetSimilarItemsInGroup(vector<string> &RutsackList)
             {
                 if (FirstItem == SecondItem && FirstItem == ThirdItem && SecondItem == ThirdItem)
                 {
-                    SimilarItem = FirstItem;
+                    return FirstItem;
                 }
             }
         }
     }
 
-    if (SimilarItem == '\0')
-    {
-        return '\0';
-    }
-    else
-    {
-        return SimilarItem;
-    }
+    return '\0';
 }
 
 int main(int argc, char **argv)
