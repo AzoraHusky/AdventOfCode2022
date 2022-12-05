@@ -100,7 +100,6 @@ int main(int argc, char **argv)
 
     string Line;
     int ColoumnCounter = 0;
-    int RowCounter = 0;
 
     bool IsDoneWithVector = false;
 
